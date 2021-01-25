@@ -11,4 +11,4 @@ It is the third layer of the layer cake of standard web technologies:
   multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing
   what you can achieve with a few lines of JavaScript code.)
 
-!(layer-cake)[https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/cake.png]
+![layer-cake](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/cake.png)
