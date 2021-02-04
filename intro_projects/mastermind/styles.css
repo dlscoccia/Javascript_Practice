@@ -183,7 +183,7 @@ footer .hole {
 
 .colors #blue {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #0003b8, #8598eccc);
+    background: #00B1AA;
 }
 
 .colors #yellow {
@@ -196,7 +196,7 @@ footer .hole {
     background: linear-gradient( 35deg, #dd02fa, #bbb9b99c);
 }
 
-.colors #pink {
+.colors #white {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
     background: linear-gradient( 35deg, #eef1ee, #d0d1cfa8);
 }
