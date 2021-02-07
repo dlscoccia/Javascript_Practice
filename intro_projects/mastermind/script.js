@@ -24,15 +24,15 @@ var hints = 0;
 var winner = 0;
 var rowsCompleted2 = 0;
 let colors = ["green", "red", "white", "yellow", "fucsia", "empty"]
-    //take the last 4 colors of the random array
-let final = ["red", "red", "fucsia", "yellow"] //randomFinal().slice(2);
-    // The four choices for each row
+// The colors to be guessded (Dafault PcPlayer):
+let final = randomFinal().slice(2); // ["empty", "empty", "fucsia", "red"] //
+// The four choices for each row:
 let choices = [];
-// Array of choices made for the 2nd player
+// Array of choices made for the 2nd player:
 var secondPlayerChoices = [];
-// Index to populate the optionColors choosed from 2nd player
+// Index to populate the optionColors choosed from 2nd player:
 var indexSecondPlayer = -1;
-// Variables to see which opponent is active
+// Variables to see which opponent is active:
 var secondPlayerState = false;
 var pcPlayerState = false;
 
@@ -40,7 +40,7 @@ var pcPlayerState = false;
 // This triggers the random selection for PC player
 function randomFinal() {
     const finalFinal = [...new Array(6)].map(color => {
-        const random = Math.floor(Math.random() * Math.floor(colors.length)); //Colocamos random los colores
+        const random = Math.floor(Math.random() * Math.floor(colors.length)); //Put random colors
         return colors[random]; // Returns random selection.
     })
     return finalFinal;
@@ -50,7 +50,8 @@ function randomFinal() {
 function pcGame() {
     pcPlayerState = true;
     if (rowsCompleted == 0 && index == 41) {
-        randomFinal();
+        final = randomFinal().slice(2);
+        console.log(final)
         btnPcPlayer.classList.add('active');
         alert("The game has Started! Good Luck!");
     } else if (winner == 4 || rowsCompleted == 9) {
@@ -85,7 +86,7 @@ function restartGame() {
     for (i = 9; i < 45; i++) {
         holes[i].classList.remove('green', 'red', 'white', 'empty', 'yellow', 'fucsia');
     }
-    for (i = 0; i < 35; i++) {
+    for (i = 0; i < 36; i++) {
         miniHoles[i].classList.remove('full', 'half', 'checked');
     }
     for (i = 0; i < 4; i++) {
@@ -127,22 +128,25 @@ function gameOver() {
 }
 
 // Checks the answer against the final code & adds the corresponding class
-function check(colors) {
+function check(choices) {
     const checks = [];
     const pendingChecks = [...final]; //Copy of final
+    const pendingChoices = [...choices]; //Copy of choices
     //Checks color and position
-    colors.forEach((color, index) => {
+    choices.forEach((color, index) => {
         if (final[index] === color) {
             checks.push("full");
             pendingChecks[index] = "checked";
+            pendingChoices[index] = "checked";
         }
     })
-    colors.forEach((color, index) => {
+    pendingChoices.forEach((color, index) => {
         if (pendingChecks.includes(color) && final.includes(color)) {
             checks.push("half");
             let temp = pendingChecks.indexOf(color)
             pendingChecks[temp] = "checked";
         }
+        pendingChoices[index] = "checked";
     })
     return checks;
 }
@@ -177,10 +181,14 @@ function updateHints() {
         choices = [];
         winner = 0;
     }
+    else {
+        for (i = index2; i < index2 + 4; i++){
+            miniHoles[i].classList.add("full") // Marks black all miniholes
+        }
+    }
 }
 // Select the color that is clicked on the options table
 function selectColor(color) {
-    console.log(secondPlayerState)
     if (secondPlayerState == false && !btnSecondPlayer.classList.contains('active')) {
         btnPcPlayer.classList.add('active');
     }
@@ -191,7 +199,6 @@ function selectColor(color) {
         }
         insertedColors += 1;
         choices.push(color)
-        console.log(choices);
         if (insertedColors == 4 && rowsCompleted < 9) {
             index -= 8;
             insertedColors = 0;
@@ -232,7 +239,6 @@ function secondPlayerGame() {
         if (secondPlayerChoices.length == 0 && !btnPcPlayer.classList.contains('active')) {
             restartGame();
             alert('Choose your combination');
-            console.log(secondPlayerState)
         }
         indexSecondPlayer += 1;
     }
