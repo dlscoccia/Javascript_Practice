@@ -14,17 +14,22 @@ const undo = document.getElementById('undo');
 const btnSecondPlayer = document.getElementById('2player');
 // Activate pc player for pattern selection
 const btnPcPlayer = document.getElementById('pcplayer');
-//Variables
+//Variables Used for the script
+// index for holes on player table
 var index = 41;
+// index for mini holes on checker
 var index2 = 32;
+// Number of colors selected for the code to crack
 var insertedColors = 0;
+// Number of colors to compare in the checker
 var insertedColors2 = 0;
+// Number of rows filled with 4 colors
 var rowsCompleted = 0;
-var hints = 0;
+// Number of correct answer of the row
 var winner = 0;
-var rowsCompleted2 = 0;
-let colors = ["green", "red", "white", "yellow", "fucsia", "empty"]
-// The colors to be guessded (Dafault PcPlayer):
+// Array that stores the colors available to choose
+let colors = ["green", "red", "white", "yellow", "fucsia", "empty"];
+// The colors to be guessed: Default PcPlayer
 let final = randomFinal().slice(2); // ["empty", "empty", "fucsia", "red"] //
 // The four choices for each row:
 let choices = [];
@@ -49,15 +54,21 @@ function randomFinal() {
 // Starts the game with random selection for PC player
 function pcGame() {
     pcPlayerState = true;
-    if (rowsCompleted == 0 && index == 41) {
+    if (!btnSecondPlayer.classList.contains('active') && index == 41 && secondPlayerState != true) {
+        restartStats();
         final = randomFinal().slice(2);
-        console.log(final)
         btnPcPlayer.classList.add('active');
+        btnSecondPlayer.classList.remove('active');
+        for (let i = 0; i < 4; i++) {
+            optionColors[i].classList.remove('invisible');
+        }
         alert("The game has Started! Good Luck!");
     } else if (winner == 4 || rowsCompleted == 9) {
-        restartGame();
+        restartStats();
         pcPlayerState = false;
         btnPcPlayer.classList.add('active');
+    } else if (index != 41) {
+        alert("Finish the actual game or click on Restart");
     } else {
         alert("Finish the actual game or click on Restart");
     }
@@ -79,8 +90,8 @@ function undoGame() {
     }
 }
 
-// Restart the whole game and return every value to default
-function restartGame() {
+// Restart Stats
+function restartStats() {
     let i;
     final = randomFinal().slice(2);
     for (i = 9; i < 45; i++) {
@@ -92,23 +103,27 @@ function restartGame() {
     for (i = 0; i < 4; i++) {
         optionColors[i].classList.remove('green', 'red', 'white', 'empty', 'yellow', 'fucsia');
     }
+    for (i = 0; i < 4; i++) {
+        optionColors[i].classList.add('invisible');
+    }
     index = 41;
     index2 = 32;
     insertedColors = 0;
     insertedColors2 = 0;
     rowsCompleted = 0;
-    hints = 0;
     winner = 0;
-    rowsCompleted2 = 0;
+    // rowsCompleted2 = 0;
     secondPlayerChoices = [];
     indexSecondPlayer = -1;
-
     btnSecondPlayer.classList.remove('active');
     btnPcPlayer.classList.remove('active');
-    if (!btnPcPlayer.classList.contains('active') && !btnSecondPlayer.classList.contains('active') && secondPlayerState != true) {
-        alert("Choose Your Opponent: PC or 2nd Player");
-    }
 }
+
+// Restart the whole game and return every value to default
+function restartGame() {
+    restartStats();
+    alert("Choose Your Opponent:\n- The undefeated PC Player\n- A 2nd Player (Time to Beat Your Friends!)");
+};
 
 // Alert that show a message to player saying that the game is over
 function gameOver() {
@@ -180,9 +195,8 @@ function updateHints() {
         }
         choices = [];
         winner = 0;
-    }
-    else {
-        for (i = index2; i < index2 + 4; i++){
+    } else {
+        for (i = index2; i < index2 + 4; i++) {
             miniHoles[i].classList.add("full") // Marks black all miniholes
         }
     }
@@ -191,6 +205,9 @@ function updateHints() {
 function selectColor(color) {
     if (secondPlayerState == false && !btnSecondPlayer.classList.contains('active')) {
         btnPcPlayer.classList.add('active');
+        for (let i = 0; i < 4; i++) {
+            optionColors[i].classList.remove('invisible');
+        }
     }
     if (secondPlayerState == false) {
         holes[index].classList.add(color);
@@ -208,6 +225,7 @@ function selectColor(color) {
         }
     } else {
         secondPlayerChoices.push(color);
+        optionColors[indexSecondPlayer].classList.remove('invisible');
         secondPlayerGame();
     }
 };
@@ -216,12 +234,12 @@ function selectColor(color) {
 function secondPlayerGame() {
     if (rowsCompleted == 9 || winner == 4) {
         secondPlayerState = true;
-        restartGame();
+        restartStats();
     }
-    if (!btnPcPlayer.classList.contains('active')) {
+    if (!btnPcPlayer.classList.contains('active') && secondPlayerChoices.length < 4) {
         btnSecondPlayer.classList.add('active');
         secondPlayerState = true;
-    } else {
+    } else if (btnPcPlayer.classList.contains('active') || btnSecondPlayer.classList.contains('active') && index != 41) {
         alert("Finish the actual game or click on Restart");
     }
     if (secondPlayerChoices.length == 4) {
@@ -232,15 +250,13 @@ function secondPlayerGame() {
         }
         if (rowsCompleted == 0 && index == 41) {
             alert("The game has Started! Good Luck!");
-        } else {
-            alert("Finish the actual game or click on Restart");
         }
     } else {
         if (secondPlayerChoices.length == 0 && !btnPcPlayer.classList.contains('active')) {
-            restartGame();
+            restartStats();
             alert('Choose your combination');
         }
-        indexSecondPlayer += 1;
+        indexSecondPlayer = secondPlayerChoices.length;
     }
 };
 

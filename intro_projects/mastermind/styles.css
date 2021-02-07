@@ -3,7 +3,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
 body {
     margin: 0;
     box-sizing: border-box;
@@ -82,6 +82,18 @@ header {
     border-radius: 100%;
     margin: 10px 10px 10px 9px;
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.pc-player .options .hole {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Domine', serif;
+    font-weight: 100;
+    visibility: visible;
+}
+
+.pc-player .options .hole.invisible {
+    visibility: hidden;
 }
 
 .container {
