@@ -132,13 +132,13 @@ function gameOver() {
         for (i = 0; i < 4; i++) {
             optionColors[i].classList.add(final[i]);
         }
-        alert("Game Over my friend!!! Restart and Try Again");
+        alert("Game Over My Friend!!!\n\nRestart and Try Again :)");
     }
     if (winner == 4) {
         for (i = 0; i < 4; i++) {
             optionColors[i].classList.add(final[i]);
         }
-        alert("You won!! You are the Best!! Can you make it Again?")
+        alert("You Won!! You Are The Best!!\n\nCan You Make it Again?")
     }
 }
 
