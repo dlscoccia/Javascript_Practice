@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <header>MasterMind - The Game</header>
+    <header>MasterMind</header>
     <div class="pc-player">
         <div class="buttons">
-            <button class="undo" id="undo">PC Player</button>
-            <button id="restart">2nd Player</button>
+            <button class="pcplayer" id="pcplayer" onclick="pcGame()">PC Player</button>
+            <button class="secondplayer" id="2player">2nd Player</button>
         </div>
         <div class="options">
-            <div class="hole" id="green"></div>
-            <div class="hole" id="red"></div>
-            <div class="hole" id="blue"></div>
-            <div class="hole" id="yellow"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
         </div>
     </div>
     <div class="container">
@@ -141,18 +141,19 @@
     </div>
     <footer>
         <div class="colors">
-            <div class="hole" id="green"></div>
-            <div class="hole" id="red"></div>
-            <div class="hole" id="white"></div>
-            <div class="hole" id="yellow"></div>
-            <div class="hole" id="black"></div>
-            <div class="hole" id="blue"></div>
+            <div class="item green" id="green"></div>
+            <div class="item red" id="red"></div>
+            <div class="item white" id="white"></div>
+            <div class="item yellow" id="yellow"></div>
+            <div class="item fucsia" id="fucsia"></div>
+            <div class="item empty" id="blue"></div>
         </div>
         <div class="buttons">
-            <button class="undo" id="undo">Undo</button>
-            <button id="restart">Restart</button>
+            <button class="undo" id="undo" onclick="undoGame()">Undo</button>
+            <button id="restart" onclick="restartGame()">Restart</button>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

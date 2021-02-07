@@ -1,3 +1,7 @@
+/* Improvement to do:
+- Responsive layout
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
 body {
@@ -13,7 +17,7 @@ body {
 }
 
 header {
-    width: 35%;
+    width: 500px;
     text-align: center;
     height: 50px;
     font-size: 30px;
@@ -24,7 +28,7 @@ header {
 }
 
 .pc-player {
-    width: 30%;
+    width: 400px;
     height: 60px;
     background: rgb(246, 247, 246);
     background: linear-gradient(90deg, rgba(246, 247, 246, 1) 0%, rgba(255, 149, 38, 1) 0%, rgba(246, 235, 20, 1) 100%);
@@ -34,7 +38,7 @@ header {
 }
 
 .pc-player .buttons {
-    width: 25%;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +46,7 @@ header {
 }
 
 .pc-player .buttons button {
-    width: 100%;
+    width: 100px;
     font-family: 'Potta One', cursive;
     border-radius: 5px;
     box-shadow: 3px 1px rgba(0, 0, 0, 0.349);
@@ -50,6 +54,19 @@ header {
     color: #fff;
     background-color: #000000;
     font-size: 14px;
+}
+
+.pc-player .buttons button:hover {
+    cursor: pointer;
+    background-color: #464444;
+}
+
+.pc-player .buttons .active {
+    background-color: rgb(177, 6, 6);
+}
+
+.pc-player .buttons .active:hover {
+    background-color: rgb(248, 36, 36);
 }
 
 .pc-player .options {
@@ -68,13 +85,13 @@ header {
 }
 
 .container {
-    width: 30%;
+    width: 400px;
     display: flex;
     justify-content: center;
 }
 
 .container .checker-table {
-    width: 25%;
+    width: 100px;
     background-color: #FF9526;
     display: flex;
     flex-direction: column;
@@ -105,6 +122,14 @@ header {
     border-radius: 100%;
 }
 
+.container .checker-table .row .full {
+    background-color: black;
+}
+
+.container .checker-table .row .half {
+    background-color: white;
+}
+
 .container .player-table {
     width: 75%;
     background-color: #FF9526;
@@ -130,12 +155,9 @@ header {
 }
 
 footer {
-    width: 35%;
+    width: 400px;
     height: 60px;
     background-color: #000000;
-    /*background: rgb(246, 247, 246);
-    background: linear-gradient(90deg, rgba(246, 247, 246, 1) 0%, rgba(246, 241, 135, 1) 0%, rgba(244, 188, 129, 1) 100%);
-   */
     margin-top: 5px;
     border-radius: 10px;
     display: flex;
@@ -147,8 +169,12 @@ footer .colors {
     justify-content: space-evenly;
 }
 
+footer .colors .item:hover {
+    cursor: grabbing;
+}
+
 footer .buttons {
-    width: 25%;
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,29 +182,23 @@ footer .buttons {
 }
 
 footer .buttons button {
-    width: 60%;
+    width: 80px;
     font-family: 'Potta One', cursive;
     border-radius: 5px;
     box-shadow: 3px 1px rgba(139, 132, 132, 0.349);
 }
 
-footer .hole {
+footer .buttons button:hover {
+    cursor: pointer;
+    background-color: #464444;
+}
+
+footer .item {
     width: 40px;
     height: 40px;
-    background-color: blue;
     border-radius: 100%;
     margin: 0px 10px;
     margin-top: 10px;
-}
-
-.colors #green {
-    box-shadow: 3px 5px 5px 0px rgba(51, 50, 50, 0.75);
-    background: linear-gradient( 35deg, #09f71d, #d2fcb0);
-}
-
-.colors #red {
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #ff0000, #fcb5b0ec);
 }
 
 .colors #blue {
@@ -186,47 +206,68 @@ footer .hole {
     background: #00B1AA;
 }
 
-.colors #yellow {
+.container .player-table .row .green,
+.options .hole.green,
+.colors #green {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #ffe600, #d2fcb0);
+    background: linear-gradient( 35deg, #0baf19, #d2fcb0);
 }
 
-.colors #black {
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #dd02fa, #bbb9b99c);
-}
-
+.container .player-table .row .white,
+.options .hole.white,
 .colors #white {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
     background: linear-gradient( 35deg, #eef1ee, #d0d1cfa8);
 }
 
-.container .player-table .row #green {
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #0baf19, #d2fcb0);
-}
-
-.container .player-table .row #pink {
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #eef1ee, #d0d1cfa8);
-}
-
-.container .player-table .row #red {
+.container .player-table .row .red,
+.options .hole.red,
+.colors #red {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
     background: linear-gradient( 35deg, #ff0000, #fcb5b0ec);
 }
 
-.container .player-table .row #blue {
+.container .player-table .row .empty,
+.options .hole.empty {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.95);
-    background: linear-gradient( 35deg, #0206f3, #e6ebffcc);
+    background: linear-gradient( 35deg, #00B1AA, #e6ebffcc);
 }
 
-.container .player-table .row #yellow {
+.container .player-table .row .yellow,
+.options .hole.yellow,
+.colors #yellow {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
     background: linear-gradient( 35deg, #ffe600, #d2fcb0);
 }
 
-.container .player-table .row #black {
+.container .player-table .row .fucsia,
+.options .hole.fucsia,
+.colors #fucsia {
     box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    background: linear-gradient( 35deg, #000000, #5050509c);
+    background: linear-gradient( 35deg, #dd02fa, #bbb9b99c);
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        width: 360px;
+        color: #000000;
+    }
+    .pc-player {
+        width: 350px;
+        margin-left: 10px;
+    }
+    footer {
+        width: 360px;
+        margin-left: 10px;
+    }
+    .container {
+        margin: 0;
+    }
+    .container .checker-table {
+        width: 60px;
+        margin-left: 10px;
+    }
+    .container .player-table {
+        width: 260px;
+    }
 }
