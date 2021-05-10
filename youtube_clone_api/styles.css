@@ -1,0 +1,24 @@
+body {
+    background-color: #eee;
+}
+
+.container {
+    width: 560px;
+    height: 100vh;
+    background-color: #fff;
+margin: 0 auto;
+}
+
+header, section {
+    position: fixed;
+    width: 560px;
+    text-align: center;
+}
+
+section {
+    top: 80px;
+}
+
+.logo {
+    padding: 5px;
+}

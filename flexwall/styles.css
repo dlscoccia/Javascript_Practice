@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(217, 223, 223);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    margin: 2rem;
+}
+
+span {
+    text-decoration: line-through;
+}
+
+.playground {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.concepts {
+    width: 33.33%;
+    text-align: center;
+}
+
+.concepts p {
+    font-size: 18px;
+    margin: 1rem 0.5rem;
+
+}
+
+.code-area {
+    width: 33.33%;
+}
+
+.code-area textarea {
+    width: 90%;
+    height: 80%;
+}
+
+.grid {
+    width: 33.33%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.row-1, .row-2, .row-3, .row-4, .row-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #000;
+}
+
+
+.brick {
+    background-image: url('https://img.icons8.com/fluent/48/000000/brick-wall.png');
+    background-size: cover;
+}
