@@ -3,7 +3,7 @@
 1.- Fix the date to the actual city
 2.- Put more options to the user to query: by zip code
 3.- Section to expand more info: humidity, altitude, latitude, etc
-
+4.- Change Background depending on the climate
 */
 
 const api = {
