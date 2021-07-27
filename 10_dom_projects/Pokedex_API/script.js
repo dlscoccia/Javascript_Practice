@@ -24,9 +24,6 @@ const fetchPokemons = async () => {
         await getPokemon(i)
     }
 }
-
-
-
 // Obtiene la data del pokemon
 const getPokemon = async id => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
