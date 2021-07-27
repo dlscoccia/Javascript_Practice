@@ -4,7 +4,7 @@ const pokemonsNumber = 100
 const typeColors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
-	electric: '#FCF7DE',
+	electric: '#f3f367',
 	water: '#DEF3FD',
 	ground: '#f4e7da',
 	rock: '#d5d5d4',
