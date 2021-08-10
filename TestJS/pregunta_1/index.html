@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad de conducir</title>
+</head>
+<body>
+    <script>
+        // Solicitud de la edad
+        const edad = prompt("Ingrese su edad")
+
+        // Verificación de que sea una edad valida (Es número y mayor a 0)
+        if (Number(edad) && edad > 0) {
+            // Cumple con la condición y puede manejar
+            if (edad > 18) {
+                document.write("Puedes conducir")
+            }   // No tiene edad para manejar
+                else {
+                document.write("Aún no puedes conducir")
+            }
+        }   // Indica que la edad ingresada no es un numero valido
+            else {
+                alert("Introduce un numero valido")
+            }
+    </script>
+</body>
+</html>
