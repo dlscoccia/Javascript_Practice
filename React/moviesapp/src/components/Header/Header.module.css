@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+.header {
+background-color: #ffffff;
+width: 100%;
+padding: 10px 0;
+font-family: 'Style Script', cursive;
+border-bottom: solid rgb(246, 255, 0) 2px;
+}
+.navList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navItem:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: 48px;
+    text-decoration: none;
+    color: rgb(21, 5, 103);
+    margin-left: 20 px;
+}
+
+.name:visited {
+    text-decoration: none;
+}

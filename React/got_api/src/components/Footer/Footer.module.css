@@ -1,0 +1,39 @@
+
+.footer {
+    background-color: rgb(255, 255, 255);
+    font-family: 'cinzel', serif;
+    font-size: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerList {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerList li {
+    width: 10%;
+    font-weight: 900;
+}
+
+.footerList li a {
+    text-decoration: none;
+    color: #111;
+}
+
+.footerList li a:hover {
+    color: #555;
+}
+
+.footerImage {
+    align-self: center;
+    width: 75px;
+    height: auto;
+}

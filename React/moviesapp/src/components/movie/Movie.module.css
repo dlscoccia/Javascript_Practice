@@ -1,0 +1,44 @@
+.movieCard {
+    text-align: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    border-radius: 20px 0 20px 0;
+    border: solid 3px hsl(57, 100%, 52%);
+}
+
+.movieCard a {
+    text-decoration: none;
+}
+
+.movieCard:hover {
+    opacity: 0.8;
+}
+
+.title {
+    color: #f6f6f6;
+    margin-top: 15px;
+    font-family: monospace;
+    color: rgb(5, 23, 102);
+}
+
+.img {
+    width: 100%;
+    height: 320px;
+    background-color: azure;
+    border-radius: 20px 0 0 0;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 560px) {
+    .img {
+        width: 90%;
+        height: auto;
+    }
+}

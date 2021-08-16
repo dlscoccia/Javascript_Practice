@@ -1,0 +1,33 @@
+.detailsPage {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    border: solid #999;
+}
+
+.detailsImg {
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+    height: auto;
+}
+
+.detailsImg:hover {
+    opacity: 0.9;
+}
+
+.detailsTitle {
+    font-size: 32px;
+    color: #0c0432;
+}
+
+.detailsPopularity {
+    color: rgb(7, 15, 226);
+}
+
+.detailsDescription {
+    color: #0c0432;
+}

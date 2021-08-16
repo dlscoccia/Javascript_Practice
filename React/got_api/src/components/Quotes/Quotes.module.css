@@ -1,0 +1,29 @@
+.quotesContainer {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.name {
+    font-family: 'Cinzel', serif;
+    color: rgb(245, 213, 4);
+}
+
+.quote {
+    width: 100%;
+    font-size: 24px;
+}
+
+.quote,
+.house {
+    font-family: 'Spectral', serif;
+}
+
+.house {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
