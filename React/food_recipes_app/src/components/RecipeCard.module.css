@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c0c0c0;
+    width: 40%;
+    border-radius: 20px;
+}
+
+.cardTitle {
+    font-size: 36px;
+    text-align: center;
+}
+
+.cardImage {
+    border-radius: 10px;
+    width: 80%;
+}
+
+.ingredientsTitle {
+    text-align: center;
+}
+
+.ingredientsList {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.ingredientsList li {
+    padding: 10px 0;
+}

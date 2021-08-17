@@ -1,0 +1,46 @@
+.App {
+  min-height: 100vh;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.searchForm {
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  outline: none;
+  background-color: transparent;
+  color: #000;
+  border: none;
+  border-bottom: #c0c0c0 2px solid;
+  padding: 10px 20px;
+  width: 50%;
+}
+
+.searchInput:focus {
+  outline-offset: none;
+  border: none;
+  border-bottom: #fddb00 2px solid;
+  color: #fff;
+}
+
+.searchBtn {
+  color: #000;
+  padding: 10px 20px;
+  background-color: #c0c0c0;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.searchBtn:hover {
+  background-color: #ffffff;
+}
