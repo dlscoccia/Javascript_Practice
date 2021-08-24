@@ -4,25 +4,20 @@
 const boton = document.getElementById('boton')
 const contenedor = document.getElementById('contenedor')
 let posts = null
-let data = {}
 
-console.log(contenedor)
 boton.addEventListener('click', async function() {
     const url = 'http://jsonplaceholder.typicode.com/posts'
     const response = await fetch(url)
-    data = await response.json()
+    const data = await response.json()
     mostrarDatos(data)
 })
 
 function mostrarDatos(posts) {
-    
     posts.map( (post, i) => {
         let titulo = document.createElement('h1')
         let contenido = document.createElement('p')
-
         titulo.innerHTML = (i + 1) + '-' + post.title
         contenido.innerHTML = post.body
-
         contenedor.appendChild(titulo)
         contenedor.appendChild(contenido)
     })

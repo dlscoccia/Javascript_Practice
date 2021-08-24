@@ -11,6 +11,9 @@ body {
     padding: 5px 15px;
     font-weight: 900;
     font-size: 20px;
+    background-color: rgb(194, 193, 195);
+    border: solid #f6f6f6 2px;
+    border-radius: 10px;
 }
 
 #contenedor {
@@ -18,9 +21,18 @@ body {
     background-color: #f6f6f6;
     text-align: center;
     margin-top: 20px;
+    border-radius: 5px;
+}
+
+#contenedor h1 {
+    color: rgb(10, 40, 99);
+    font-size: 28px;
 }
 
 #contenedor p {
     width: 80%;
+    padding: 5px;
     margin: 0 auto;
+    background-color: #e7e7e7;
+    border-radius: 10px;
 }
