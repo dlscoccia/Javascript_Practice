@@ -1,0 +1,12 @@
+.header {
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.5s ease-in;
+    @apply fixed top-2 w-full h-12 flex text-gray-50 hover:text-gray-900 items-center justify-between px-8 z-10;
+}
+
+.header:hover {
+    height: 5rem;
+    top: 0;
+    transition: all 0.5s ease-in;
+    background-color: #f6f6f6;
+}

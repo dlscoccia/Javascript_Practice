@@ -43,7 +43,6 @@ function App() {
       image={recipe.recipe.image} 
       ingredients={recipe.recipe.ingredients} 
       dishType={recipe.recipe.dishType} 
-      healthLabels={recipe.recipe.healthLabels} 
       cuisineType={recipe.recipe.cuisineType} />)
       )}
     </div>

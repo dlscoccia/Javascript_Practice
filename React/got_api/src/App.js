@@ -14,7 +14,9 @@ function App() {
           <Route exact path="/">
             <Body />
           </Route>
-          <Route path="/character/:slug" render={(props) => <Character slug={`${props.match.params.slug}`} />}/> 
+          <Route path="/character/:slug">
+            <Character />
+          </Route>
         </Switch>
         <Footer />
       </div>

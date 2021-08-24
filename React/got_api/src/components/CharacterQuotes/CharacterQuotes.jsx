@@ -13,7 +13,7 @@ function CharacterQuotes(props) {
 
     return (
         <div>
-            {quotes.map( quote => 
+            {quotes.map( quote =>
             <li>
                 <ImQuotesLeft className={style.quotesIcon}/>{quote}<ImQuotesRight className={style.quotesIcon}/>
             </li>

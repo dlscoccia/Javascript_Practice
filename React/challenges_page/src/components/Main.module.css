@@ -1,0 +1,39 @@
+.main {
+    background-image: url('../assets/main-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    @apply h-screen w-full flex flex-col items-center justify-center;
+}
+
+.main::before {
+    content: "";
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.4, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+.stackList {
+    @apply flex py-5;
+}
+
+.p {
+    z-index: 2;
+    @apply text-9xl text-gray-50 italic font-extrabold;
+}

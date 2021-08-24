@@ -3,6 +3,7 @@ import HouseMembers from '../HouseMembers/HouseMembers'
 import style from './HouseCard.module.css'
 
 function HouseCard({name, members}) {
+    console.log(members)
     return (
         <li className={style.houseCard}>
             <h2 className={style.houseName}>{name}</h2>
