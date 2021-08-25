@@ -1,0 +1,15 @@
+.header {
+    background-color: rgb(38, 75, 75);
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+input {
+    padding: 10px;
+}
+
+.btn {
+    background-color: rgb(55, 38, 38);
+    color: #fff;
+}

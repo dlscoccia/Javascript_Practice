@@ -1,15 +1,16 @@
 import React from 'react'
 import { Londres } from '../../data'
+import style from './Card.module.css'
 
-const Card = ({name, min, max, close}) => {
+const Card = ({name, min, max, close, mid = 'Hola'}) => {
 
     return (
-        <div>
-            <button onClick={close}>X</button>
-            <h2>{name}</h2>
-            <ul>
-                <li>Min: {min}</li>
-                <li>Max: {max}</li>
+        <div className={style.card}>
+            <button onClick={close} className={style.btn}>X</button>
+            <h2 className={style.name}>{name}</h2>
+            <ul className={style.list}>
+                <li className={style.listItem}>Min: {min}</li>
+                <li className={style.listItem}>Max: {max}</li>
             </ul>
         </div>
     )
