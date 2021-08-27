@@ -20,6 +20,7 @@ body {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
+  height: 80%;
 }
 
 .title {
@@ -66,6 +67,12 @@ body {
   padding: 20px;
 }
 
+.user-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
 
 .user-list .user-info {
   margin-left: 10px;
