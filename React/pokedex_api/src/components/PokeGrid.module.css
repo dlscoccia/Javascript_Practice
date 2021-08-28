@@ -1,0 +1,50 @@
+.pokeList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    list-style: none;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    gap: 20px;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    border-radius: 10px;
+
+}
+
+.label {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Acme', sans-serif;
+}
+
+.input {
+    padding:7.5px;
+    background-color: transparent;
+    border: none;
+    border-bottom:rgb(252, 3, 3) solid 2px ;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+
+.input[type=number]::-webkit-inner-spin-button, 
+.input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+.input:focus {
+    border-bottom: 2px solid red;
+    outline: none;
+}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Roboto&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Acme', sans-serif;
+}
+
+body {
+  background-image: url('./assets/background.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}

@@ -1,0 +1,109 @@
+.cardItem {
+    padding: 20px;
+    width: 30%;
+    background-color: rgb(170, 188, 182);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.cardContainer {
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    color: #f6f6f6;
+    border: #f6f6f6 solid 1px;
+}
+
+.pokeInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.imageContainer {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: solid #000 1px;
+    box-shadow: 2px 2px 5px rgb(86, 85, 85);
+    display: flex;
+    justify-content: center;
+}
+
+.pokeImage {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.pokeName {
+    font-size: 30px;
+    text-transform: capitalize;
+    margin: 1rem 0 0.5rem 0;
+    font-family: 'Lobster', cursive;
+}
+
+.pokeId {
+    text-align: center;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40%;
+    margin-top: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.pokeball {
+    font-size: 30px;
+}
+
+.pokeTypes {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.pokeType {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.pokeLists{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.pokeSubtitle {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0.5rem 0;
+    color: rgb(214, 5, 5);
+}
+
+.pokeList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    color: #fff204;
+    font-size: 14px;
+}

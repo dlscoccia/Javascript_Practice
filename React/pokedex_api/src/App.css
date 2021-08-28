@@ -1,0 +1,10 @@
+.App {
+  width: 85%;
+  min-height: 100vh;
+  margin: 10px  auto;
+  background-color: rgba(0,0,0, 0.6);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
