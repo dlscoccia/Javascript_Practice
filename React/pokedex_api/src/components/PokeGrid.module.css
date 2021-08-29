@@ -48,3 +48,39 @@
     border-bottom: 2px solid red;
     outline: none;
 }
+
+.select {
+    background-color: transparent;
+    color: rgb(252, 3, 3);
+    border: none;
+    border-bottom: rgb(252, 3, 3) solid 2px;
+    margin-left: 10px;
+    font-size: 18px;
+    width: 200px;
+}
+
+.select:focus,
+.select:checked {
+    outline: none;
+    border: none;
+}
+
+.select option {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(252, 3, 3);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn {
+    border-radius: 5px 0 5px 0;
+    padding: 5px 10px;
+    border: 0.5px solid rgb(252, 3, 3);
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #222;
+}
