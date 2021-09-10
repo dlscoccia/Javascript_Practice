@@ -6,6 +6,8 @@ import Checkout from './pages/Checkout';
 import React, { useReducer } from 'react';
 import { TYPES } from './actions/shoppingActions';
 import { shoppingInitialState, shoppingReducer } from './reducers/shoppingReducer';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 export const CartContext = React.createContext()
 
@@ -33,7 +35,6 @@ function App() {
       })
     }
   }
-
   const clearCart = () => {
     dispatch({
       type: TYPES.CLEAR_CART
@@ -42,11 +43,13 @@ function App() {
   return (
     <CartContext.Provider value={{ cartState: state, cartDispatch: dispatch, addToCart, delFromCart, clearCart }}>
       <Router>
+        <Header />
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/products' component={Products} exact />
           <Route path='/checkout' component={Checkout} exact />
         </Switch>
+        <Footer />
       </Router>
     </CartContext.Provider>
   );

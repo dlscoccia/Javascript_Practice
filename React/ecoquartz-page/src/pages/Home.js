@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import Sidebar from '../components/Sidebar/Sidebar'
+import Slider from '../components/Carousel/Carousel'
+
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -12,10 +12,9 @@ const Home = () => {
     }
 
     return (
-        <div>
-            <Sidebar isOpen={isOpen} toggle={toggle} />
-            <Navbar toggle={toggle} />
-        </div>
+        <>
+           <Slider />
+        </>
     )
 }
 

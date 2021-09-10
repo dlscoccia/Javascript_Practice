@@ -14,7 +14,7 @@ flex: 1;
 export const ItemImage = styled.img`
 width: 140px;
 height: auto;
-object-fit: cover;
+object-fit: contain;
 `
 
 export const InfoControlsWrapper = styled.div`
@@ -33,6 +33,7 @@ export const Name = styled.h2`
 font-size: 18px;
 font-weight: 700;
 font-family: var(--primary);
+text-align: center;
 `
 export const Description = styled.p`
 font-size: 12px;
@@ -71,4 +72,4 @@ background-color: var(--blue);
 color: var(--yellow);
 padding: 0.2rem 0.5rem;
 font-size: 20px;
-`
+` 

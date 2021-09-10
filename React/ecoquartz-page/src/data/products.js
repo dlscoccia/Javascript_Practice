@@ -8,8 +8,12 @@ import cemento_gris from '../assets/images/cemento_gris.jpg'
 import cemento_blanco from '../assets/images/cemento_blanco.jpg'
 import cal_sb from '../assets/images/cal_sb.jpeg'
 import gravilla_saco from '../assets/images/gravilla_saco.jpg'
+import slider1 from '../assets/slider/slider-1.mp4'
+import slider2 from '../assets/slider/slider-2.jpg'
+import slider3 from '../assets/slider/slider-3.jpg'
+import slider4 from '../assets/slider/slider-4.jpg'
 
-const products = [{
+export const products = [{
         id: 1,
         name: 'Pego Quartz Gris 13kg',
         description: 'Es un adhesivo en pasta diseñado para la instalación de azulejos, cerámicos, procelanatos, granito u otro revestimiento similar.',
@@ -77,7 +81,8 @@ const products = [{
         price: 4,
         price_discount: 3.5,
         qty: 0,
-        category: 'otros'
+        category: 'otros',
+        section: true
     },
     {
         id: 8,
@@ -111,4 +116,6 @@ const products = [{
     },
 ]
 
-export default products
+export const slider = [
+    slider1, slider2, slider3, slider4
+]
