@@ -12,13 +12,10 @@ function MoviesGrid() {
         })
     }, [])
     
-    function handleClick() {
-        setMovies[movies.slice(5)]
-    }
 
     return (
         <>
-        <button onClick={handleClick}>Filter</button>
+        <button onClick={() => console.log('click')}>Filter</button>
         <ul className={style.moviesList}> {movies.map(movie => <Movie title={movie.title} id={movie.id} img={movie.poster_path} date={movies.release_date} vote={movie.vote_average} />)}
         </ul>
         </>)

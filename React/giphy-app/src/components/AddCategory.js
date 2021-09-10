@@ -11,7 +11,7 @@ const AddCategory = ({ setCategories }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setCategories( cats => [...cats, value])
+        setCategories( cats => [value, ...cats])
     }
     return (
         <form onSubmit={handleSubmit}>
