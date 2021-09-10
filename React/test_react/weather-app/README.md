@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# ¿Qué son los Hooks?
+Los Hooks son una nueva API de la librería de React que nos permite tener estado, y otras características de React, en los componentes creados con una function. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esto, antes, no era posible y nos obligaba a crear un componente con class para poder acceder a todas las posibilidades de la librería. Y de ahí viene el nombre. Hooks es gancho y, precisamente, lo que hacen, es que te permiten enganchar tus componentes funcionales a todas las características que ofrece React.
 
-## Available Scripts
+## El hook de estado: useState
+El hook useState es el que nos permite agregarle un estado local a un componente funcional y cambiar ese estado.
 
-In the project directory, you can run:
+```
+import React, { useState } from 'react';
 
-### `yarn start`
+function Example() {
+  // Declara una nueva variable de estado, que llamaremos "count".
+  const [count, setCount] = useState(0);
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
 
-### `yarn test`
+###### Cada vez que actualicemos el estado interno de nuestro componente, este se volverá a renderizar para plasmar los cambios que comportan.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## useEffect: accediendo al ciclo 🌀 de vida de nuestro componente
 
-### `yarn build`
+un hook que recibe como parámetro una función que se ejecutará cada vez que nuestro componente se renderice, ya sea por un cambio de estado, por recibir props nuevas o, y esto es importante, porque es la primera vez que se monta.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+import React, { useEffect } from 'react'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+function Example() {
+  useEffect(function () {
+    console.log('render!')
+  })
+  
+  return <span>This is a useEffect example</span>
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## useContext()
 
-### `yarn eject`
+Context nos permite comunicar props en un árbol de componentes sin necesidad de pasarlos manualmente a través de props.
+Algunos ejemplos de cuándo utilizar Context son:
+Un Tema de la UI (light theme, dark theme, etc).
+Autenticación del usuario.
+Idioma preferido.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Crear nuestro contexto
+```
+export const Carrito = React.createContext()
+```
+- Creamos nuestro provider y envolvemos nuestra App.js y le colocamos dentro value el objeto con todas las props
+- Dentro de nuestro componente hijo importamos nuestro contexto y useContext, desestructuramos las props que necesitamos, y usamos el useContext con nuestro contexto
+```
+const { cartItems, onAdd, onRemove } = useContext(Carrito)
+```
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Recursos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[React Hooks - Midudev](https://midu.dev/react-hooks-introduccion-saca-todo-el-potencial-sin-class/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[useContext - Ejemplo](https://johnserrano.co/blog/introduccion-a-react-context-con-los-hooks-de-react)
 
-## Learn More
+[Ejemplo Carrito con useState](https://www.youtube.com/watch?v=AmIdY1Eb8tY)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Ejemplo Carrito con useReducer](https://www.youtube.com/watch?v=nrC8sr3WsoM&t=1s)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Cargar Imagenes locales en React](https://www.youtube.com/watch?v=ZwSwp8iRk2E)
