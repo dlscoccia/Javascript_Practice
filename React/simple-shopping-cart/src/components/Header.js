@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Carrito } from '../App';
 
-export default function Header(props) {
+export default function Header() {
+  const { countCartItems } = useContext(Carrito)
+ // console.log(products)
   return (
     <header className="block row center">
       <div>
@@ -11,8 +14,8 @@ export default function Header(props) {
       <div>
         <a href="#/cart">
           Cart{' '}
-          {props.countCartItems ? (
-            <button className="badge">{props.countCartItems}</button>
+          {countCartItems ? (
+            <button className="badge">{countCartItems}</button>
           ) : (
             ''
           )}

@@ -12,7 +12,6 @@ function App() {
         <Header />
       </Link>    
       <main>
-      
         <Switch>
         <Route exact path='/'><MoviesGrid /></Route>
         <Route path="/movie/:id"><MovieDetails /></Route>

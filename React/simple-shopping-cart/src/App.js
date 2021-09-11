@@ -2,11 +2,13 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Basket from './components/Basket';
 import data from './data';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+export const Carrito = React.createContext()
 
 function App() {
 
-  const { products } = data;
+  const { pizza, tortilla } = data;
   const [cartItems, setCartItems] = useState([]);
 
   const onAdd = (product) => {
@@ -36,17 +38,17 @@ function App() {
   };
 
   return (
+    <>
+    <Carrito.Provider value={{cartItems, countCartItems: cartItems.length, pizza, tortilla, onAdd, onRemove}}>
+    <Header />
     <div className="App">
-      <Header countCartItems={cartItems.length}></Header>
       <div className="row">
-        <Main products={products} onAdd={onAdd}></Main>
-        <Basket
-          cartItems={cartItems}
-          onAdd={onAdd}
-          onRemove={onRemove}
-        ></Basket>
+        <Main  />
+        <Basket />
       </div>
     </div>
+    </Carrito.Provider>
+    </>
   );
 }
 

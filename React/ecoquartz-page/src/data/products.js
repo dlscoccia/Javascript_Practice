@@ -117,5 +117,5 @@ export const products = [{
 ]
 
 export const slider = [
-    slider1, slider2, slider3, slider4
+    slider2, slider3, slider4
 ]
