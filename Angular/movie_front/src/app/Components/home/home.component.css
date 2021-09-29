@@ -1,0 +1,98 @@
+h1 {
+  font-size: 4rem;
+  animation: pulsate 0.11s ease-in-out infinite alternate;    
+  font-family: 'Fredoka One', cursive;
+  color: #00296B;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.container {
+margin-top: 20vh;
+}
+
+@keyframes pulsate {
+  
+100% {
+
+    text-shadow:
+    0 0 0.5px #fff,
+    0 0 1.5px #fff,
+    0 0 2.5px #fff,
+    0 0 5px #00296B,
+    0 0 10px #00296B,
+    0 0 12px #00296B,
+    0 0 13px #00296B,
+    0 0 15px #00296B;
+
+}
+
+0% {
+
+  text-shadow:
+  0 0 0.5px #fff,
+  0 0 1.5px #fff,
+  0 0 2.5px #fff,
+  0 0 4.5px #00296B,
+  0 0 9px #00296B,
+  0 0 12px #00296B,
+  0 0 14px #00296B,
+  0 0 18px #00296B;
+
+}
+}
+
+th, tr, td {
+  color: #00296B;
+}
+
+tr:hover {
+  background-color: #00296B20;
+}
+
+table {
+  border-color: #001f522e;
+}
+
+.btn.btn-add {
+  font-size: 20px;
+  color: #f7fff7;
+}
+
+input::placeholder {
+  color: #00296B80;
+  opacity: 1;
+  transition: all 0.7s ease;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.btn-fas {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width:768px) {
+  .btn-fas {
+    margin: 5px 0;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:480px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.tr-data:nth-child(even) {
+  background-color: #ebebeb;
+}

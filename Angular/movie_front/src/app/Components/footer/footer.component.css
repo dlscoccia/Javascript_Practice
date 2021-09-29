@@ -1,0 +1,33 @@
+footer {
+  background-color: #00296b;
+}
+
+.banner {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  width: 80px;
+}
+
+.fab {
+  font-size: 30px;
+}
+
+.express {
+  width: 30px;
+  height: auto;
+}
+
+.btn-stack {
+  background-color: #F7FFF7;
+}
+
+.btn-stack a {
+  color: #000;
+
+}
+
+a {
+  text-decoration: none;
+}

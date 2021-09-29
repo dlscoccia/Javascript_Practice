@@ -1,0 +1,28 @@
+.navbar {
+  background-color: rgb(4, 11, 80);
+  font-size: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 32px;
+}
+
+.navbar-brand:hover {
+  color:#f7fff7;
+}
+
+.navbar-toggler {
+  background-color: #f7fff7;
+  outline: none;
+  border: none;
+}
+
+.navbar-toggler:active,
+.navbar-toggler:focus {
+  outline: none;
+  border: none;
+}

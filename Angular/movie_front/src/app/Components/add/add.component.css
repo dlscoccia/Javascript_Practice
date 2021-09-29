@@ -1,0 +1,46 @@
+.add {
+  min-height: 60vh;
+  color: #00296b;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+}
+
+.btn {
+  font-size: 20px;
+}
+
+.btn.btn-add {
+  color: #00296b;
+  border: thin solid #00296b;
+}
+
+.btn.btn-add:hover,
+.btn.btn-outline-info:hover {
+  opacity: 0.8;
+  color: #f7fff7;
+  background-color: #00296b;
+  border: thin solid #00a5cf;
+}
+
+.myAlert {
+  display: flex;
+  width: max-content;
+  color: rgba(255, 0, 0, 0.924);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: rgba(255, 0, 0, 0.235);
+  opacity: 0;
+}
+
+.myAlert.show {
+  opacity: 1;
+}
+
+@media screen and (max-width: 470px) {
+  .myAlert {
+    font-size: 12px;
+  }
+}
